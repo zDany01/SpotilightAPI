@@ -10,6 +10,7 @@ To run this application download the `docker-compose.yaml` and edit these enviro
  - BULB_ID
  - BULB_IP
  - BULB_SECRET
+
 with your Tuya Bulb data. ([How to obtain them](https://community.home-assistant.io/t/how-i-made-tuya-local-work-with-full-color-controls/478030)) \
 Then, in the same folder, create and run the container with
 ``` bash

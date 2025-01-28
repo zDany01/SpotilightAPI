@@ -1,7 +1,7 @@
 services:
   api:  
     build: .
-    image: zDany01/spotilightapi
+    image: zdany01/spotilightapi
     ports:
       - "2890:2890"
     env_file:
