@@ -1,0 +1,10 @@
+services:
+  api:  
+    image: zDany01/spotilightapi
+    ports:
+      - "2890:2890"
+    environment:
+      - BULB_ID=
+      - BULB_IP=
+      - BULB_SECRET=
+    container_name: "spotilightapi"

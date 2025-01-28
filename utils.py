@@ -13,6 +13,8 @@ def getBulb() -> BulbDevice:
         bulbID = environ["BULB_ID"]
         bulbIP = environ["BULB_IP"]
         bulbSecret = environ["BULB_SECRET"]
+        if not bulbID or not bulbIP or not bulbSecret:
+            raise ValueError()
     except:
         print("Unable to get Bulb Info.\nRemember to set your bulb info in the docker environment!")
         exit(1)

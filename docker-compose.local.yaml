@@ -1,0 +1,9 @@
+services:
+  api:  
+    build: .
+    image: zDany01/spotilightapi
+    ports:
+      - "2890:2890"
+    env_file:
+      - ./dev.env
+    container_name: "spotilightapi"
