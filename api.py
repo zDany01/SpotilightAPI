@@ -9,6 +9,8 @@ red: int = randint(0, 255)
 green: int = randint(0, 255)
 blue: int = randint(0, 255)
 
+utils.getBulb() #Cache the bulb and perform the check before an API call occurs
+
 api = FastAPI(title="SpotilightAPI", description="An API that listen to predefined call to change the color and brightness of Tuya RGB Bulbs", version="0.1", license_info={"name": "MIT License", "identifier": "MIT", "url": "https://github.com/zDany01/SpotilightAPI/blob/main/LICENSE"})
 api.add_middleware(
     CORSMiddleware,
