@@ -1,6 +1,0 @@
-#!/bin/bash
-
-APP_NAME=Spotilight
-source ./$APP_NAME/bin/activate
-python3 -m uvicorn api:api --host 0.0.0.0 --port 2890
-deactivate
