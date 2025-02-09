@@ -7,9 +7,12 @@ An API that listen to predefined calls to change the color and brightness of Tuy
 ## Setup
 ### Docker Compose
 To run this application download the `docker-compose.yaml` and edit these environment variable 
- - BULB_ID
- - BULB_IP
- - BULB_SECRET
+| Parameter | Type     |
+| :-------- | :------- |
+| BULB_ID | String |
+| BULB_IP | String |
+| BULB_SECRET | String |
+| BULB_SWITCH_ON | Boolean |
 
 with your Tuya Bulb data. ([How to obtain them](https://community.home-assistant.io/t/how-i-made-tuya-local-work-with-full-color-controls/478030)) \
 Then, in the same folder, create and run the container with
@@ -29,6 +32,7 @@ docker run --name spotilightapi \
 -e BULB_ID=YourIDHere \
 -e BULB_IP=1.2.3.4 \
 -e BULB_SECRET="SecretHere" \
+-e BULB_SWITCH_ON=True
 -p 2890:2890 \
 spotilightapi
  ```
