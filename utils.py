@@ -4,6 +4,9 @@ from random import randint
 
 bulb: BulbDevice = None
 
+def strBool(value: str) -> bool:
+    return value.lower() in ["true", "1", "on"]
+
 def getBulb() -> BulbDevice:
     global bulb
     if bulb is not None:
@@ -13,6 +16,7 @@ def getBulb() -> BulbDevice:
         bulbID = environ["BULB_ID"]
         bulbIP = environ["BULB_IP"]
         bulbSecret = environ["BULB_SECRET"]
+        bulbSwitch = environ["BULB_SWITCH_ON"]
         if not bulbID or not bulbIP or not bulbSecret:
             raise ValueError()
     except:
@@ -26,9 +30,10 @@ def getBulb() -> BulbDevice:
         version=3.3
     )
 
-    bulb.turn_on()
-    bulb.set_white(1000, 1000)
-    print("Accesa")
+    if strBool(bulbSwitch):
+        bulb.turn_on()
+        bulb.set_white(1000, 1000)
+
     return bulb
 
 def randomColor(color) -> int:
